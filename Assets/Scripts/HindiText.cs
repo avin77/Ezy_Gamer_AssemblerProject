@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class HindiText : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI newText;
+    private Text newText;
     private void Start()
     {
-        newText.text=Unicode.UnicodeToKrutiDev(newText.text);
+        newText = this.gameObject.GetComponent<Text>();
+        newText.text=HindiCorrector.Correct(newText.text);
     }
 }
