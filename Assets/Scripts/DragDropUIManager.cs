@@ -7,8 +7,8 @@ using ezygamers.CMS;
 public class DragDropUIManager : MonoBehaviour
 {
     public Image questionImage;
-    public TextMeshProUGUI questionText;
-    public TextMeshProUGUI hindiText;
+    public Text questionText;
+    public Text hindiText;
     public AudioSource questionAudioSource;
     public Transform wordOptionsContainer;
     public GameObject wordOptionPrefab;  // Prefab for word options
