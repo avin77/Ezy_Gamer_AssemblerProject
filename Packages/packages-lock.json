@@ -7,13 +7,6 @@
       "dependencies": {},
       "hash": "9aea852576049ff9eeb7265275459c4a1883e878"
     },
-    "com.ezygamer.draganddropcore": {
-      "version": "https://github.com/berasatyam460/Package_DragAndDrop.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "ab8b8745e4908573becd1b7fcf457e45d93cebf5"
-    },
     "com.unity.2d.animation": {
       "version": "9.1.1",
       "depth": 1,

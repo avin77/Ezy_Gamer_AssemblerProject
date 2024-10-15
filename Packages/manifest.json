@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "com.ezygamer.cms": "https://github.com/berasatyam460/Package_LevelConguration.git",
-    "com.ezygamer.draganddropcore": "https://github.com/berasatyam460/Package_DragAndDrop.git",
     "com.unity.collab-proxy": "2.5.1",
     "com.unity.feature.2d": "2.0.1",
     "com.unity.ide.rider": "3.0.28",

@@ -9,6 +9,9 @@ public class CMSGameEventManager
     // Event for loading question data (passing QuestionBaseSO)
     public static Action<QuestionBaseSO> OnLoadQuestionData;
 
+    //Event when opton is Selected -rohan37kumar
+    public static Action<String> OnAnswerSelected;
+
     // Method to trigger the loading of a level
     public void LoadLevel(LevelConfiggSO levelData)
     {
@@ -16,10 +19,17 @@ public class CMSGameEventManager
         OnLoadLevelData?.Invoke(levelData);
     }
 
-    // Method to trigger the loading of a question
-    public void LoadQuestion(QuestionBaseSO questionData)
+    // Method to trigger the loading of a question -rohan37kumar
+    public void LoadNextQuestion(QuestionBaseSO questionData)
     {
-        Debug.Log("Loading question data...");
+        Debug.Log("Loading question number..."+questionData.questionNo);
         OnLoadQuestionData?.Invoke(questionData);
+    }
+
+    //Method called after Option is selected or Image is Dropped -rohan37kumar
+    public void OptionSelected(String optionString)
+    {
+        Debug.Log("checking answer...");
+        OnAnswerSelected?.Invoke(optionString);
     }
 }

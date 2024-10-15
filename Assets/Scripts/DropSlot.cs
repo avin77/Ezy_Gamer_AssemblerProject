@@ -2,7 +2,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
-using ezygamer.DropNDrag;
 public class DropSlot : MonoBehaviour, IDropHandler
 {
    

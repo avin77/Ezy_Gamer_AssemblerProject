@@ -16,15 +16,14 @@ MonoBehaviour:
   questionText:
     text: Hello
   hindiText:
-    text: " \u0928\u092E\u0938\u0924\u0947"
+    text: "\u0928\u092E\u0938\u094D\u0924\u0947"
   questionImage:
-    image: {fileID: 21300000, guid: 450e5f46283678e44aef7548e8ee2a60, type: 3}
+    image: {fileID: 0}
   questionAudio:
-    audioClip: {fileID: 8300000, guid: 640f733a3b64d6c4da9bf27acaecef04, type: 3}
-  englishWordsOptions: []
-  hindiWordsOption: []
-  imageOptions: []
-  audioOptions: []
-  correctAnswerIndex: 0
+    audioClip: {fileID: 8300000, guid: bbe7e9c6b7156e345ba89c48917128b6, type: 3}
+  imageOptions:
+  - sprite: {fileID: 21300000, guid: 0f04552a347bc674cb5863ceb403df8b, type: 3}
+  - sprite: {fileID: 21300000, guid: c28d6048fc58e4949960885654171d9a, type: 3}
+  correctAnswerIndex: 1
   contentType: 1
   difficultyLevel: 0
