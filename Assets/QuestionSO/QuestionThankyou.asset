@@ -10,18 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dcdc2b11efba46478f2700781d8b2d6, type: 3}
-  m_Name: Question Base 2
+  m_Name: QuestionThankyou
   m_EditorClassIdentifier: 
-  questionNo: 2
+  questionNo: 3
   questionText:
     text: Thank you
   hindiText:
     text: "\u0927\u0928\u094D\u092F\u0935\u093E\u0926"
   questionImage:
-    image: {fileID: 21300000, guid: 335ce03f42990914c862be2da27e6105, type: 3}
+    image: {fileID: 0}
   questionAudio:
     audioClip: {fileID: 8300000, guid: 18aa6f2dcc2158541b31ca24a2424145, type: 3}
-  imageOptions: []
-  correctAnswerIndex: 0
-  contentType: 0
+  imageOptions:
+  - sprite: {fileID: 21300000, guid: 321ad5f0f97ef3645968344d9d599e40, type: 3}
+  - sprite: {fileID: 21300000, guid: 335ce03f42990914c862be2da27e6105, type: 3}
+  correctAnswerIndex: 1
+  contentType: 1
   difficultyLevel: 0

@@ -60,7 +60,7 @@ public class UIManager : MonoBehaviour
     private void UpdateUI(QuestionBaseSO questionData)
     {
         LoadDropsUI();
-        var dragDropUI = dropsUIInstance.GetComponent<DragDropUIManager>();
+        var dragDropUI = dropsUIInstance.GetComponent<PrefabUIManager>();
         dragDropUI.LoadQuestionData(questionData);
     }
 

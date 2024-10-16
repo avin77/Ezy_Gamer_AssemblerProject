@@ -14,6 +14,7 @@ public class AudioBtn : MonoBehaviour
         if (audioSource.clip!=null)
         {
             audioSource.Play();
+            Debug.Log("audio played...");
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;using UnityEngine.EventSystems;
+using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using VContainer;
 
@@ -29,11 +30,11 @@ namespace ezygamer.DropNDrag
             {
 
                 //Get the transform of the draggableHandler GameObject
-                var draggadGamObject = draggableHandler.gameObject.transform;
+                var draggedGamObject = draggableHandler.gameObject.transform;
                 // Set the parent of the dragged object to this GameObject
-                draggadGamObject.SetParent(this.transform);
+                draggedGamObject.SetParent(this.transform);
                 // Reset the local position of the dragged object to zero
-                draggadGamObject.transform.localPosition = Vector3.zero;
+                draggedGamObject.transform.localPosition = Vector3.zero;
                 Debug.Log("ItemDropped");
 
                 eventManager.OptionSelected("answer"); //triggering the event -rohan37kumar

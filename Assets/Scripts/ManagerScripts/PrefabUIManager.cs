@@ -5,7 +5,7 @@ using VContainer;
 using ezygamers.CMS;
 using System.Collections.Generic;
 
-public class DragDropUIManager : MonoBehaviour
+public class PrefabUIManager : MonoBehaviour
 {
     public Image QuestionImage;
     public Text QuestionText;

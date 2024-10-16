@@ -10,18 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dcdc2b11efba46478f2700781d8b2d6, type: 3}
-  m_Name: Question Base
+  m_Name: QuestionHello
   m_EditorClassIdentifier: 
-  questionNo: 0
+  questionNo: 1
   questionText:
     text: Hello
   hindiText:
-    text: " \u0928\u092E\u0938\u094D\u0924\u0947"
+    text: "\u0928\u092E\u0938\u094D\u0924\u0947"
   questionImage:
-    image: {fileID: 21300000, guid: c28d6048fc58e4949960885654171d9a, type: 3}
+    image: {fileID: 0}
   questionAudio:
     audioClip: {fileID: 8300000, guid: bbe7e9c6b7156e345ba89c48917128b6, type: 3}
-  imageOptions: []
-  correctAnswerIndex: 0
-  contentType: 0
+  imageOptions:
+  - sprite: {fileID: 21300000, guid: 0f04552a347bc674cb5863ceb403df8b, type: 3}
+  - sprite: {fileID: 21300000, guid: c28d6048fc58e4949960885654171d9a, type: 3}
+  correctAnswerIndex: 1
+  contentType: 1
   difficultyLevel: 0
