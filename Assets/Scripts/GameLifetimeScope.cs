@@ -10,7 +10,8 @@ public class GameLifetimeScope : LifetimeScope
         builder.RegisterComponentInHierarchy<GameManager>();
         // Register other components or managers as needed
         builder.RegisterComponentInHierarchy<UIManager>();
-        builder.RegisterComponentInHierarchy<PrefabUIManager>();
-        builder.RegisterComponentInHierarchy<DropHandler>();
+        //builder.RegisterComponentInHierarchy<DropHandler>();
+        //builder.RegisterComponentInHierarchy<PrefabUIManager>();
+
     }
 }
