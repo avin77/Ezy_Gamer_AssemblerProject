@@ -1,6 +1,6 @@
 using UnityEngine.EventSystems;
 
-namespace ezygamer.DropNDrag
+namespace ezygamers.dragndropv1
 {
     //this interface  defines the contract for drag strategies
     public interface IDragStrategy

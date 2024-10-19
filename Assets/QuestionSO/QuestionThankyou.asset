@@ -17,13 +17,19 @@ MonoBehaviour:
     text: Thank you
   hindiText:
     text: "\u0927\u0928\u094D\u092F\u0935\u093E\u0926"
-  questionImage:
+  learningImage:
     image: {fileID: 0}
   questionAudio:
     audioClip: {fileID: 8300000, guid: 18aa6f2dcc2158541b31ca24a2424145, type: 3}
   imageOptions:
-  - sprite: {fileID: 21300000, guid: 321ad5f0f97ef3645968344d9d599e40, type: 3}
-  - sprite: {fileID: 21300000, guid: 335ce03f42990914c862be2da27e6105, type: 3}
-  correctAnswerIndex: 1
-  contentType: 1
+  - optionID: 0
+    sprite: {fileID: 21300000, guid: 321ad5f0f97ef3645968344d9d599e40, type: 3}
+  - optionID: 1
+    sprite: {fileID: 21300000, guid: c28d6048fc58e4949960885654171d9a, type: 3}
+  - optionID: 2
+    sprite: {fileID: 21300000, guid: 335ce03f42990914c862be2da27e6105, type: 3}
+  - optionID: 3
+    sprite: {fileID: 21300000, guid: 0f04552a347bc674cb5863ceb403df8b, type: 3}
+  correctOptionID: 2
+  optionType: 2
   difficultyLevel: 0

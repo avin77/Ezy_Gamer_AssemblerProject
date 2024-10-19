@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-using ezygamers.CMS;
+using ezygamers.cmsv1;
 public class CMSGameEventManager
 {
     // Event for loading level data (passing LevelConfiggSO)

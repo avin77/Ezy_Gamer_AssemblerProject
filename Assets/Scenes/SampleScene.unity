@@ -1264,7 +1264,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 1
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1306,8 +1306,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9345409f1853e148b92607c7a0b4ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropsUIPrefab: {fileID: 4841250932979668625, guid: c2f02fb82a10cac4683ece0214d0440c, type: 3}
-  questionPrefab: {fileID: 4841250932979668625, guid: 42be42c9fab07bb4590c23532f6c8f21, type: 3}
+  LearningUIPrefab: {fileID: 4841250932979668625, guid: c2f02fb82a10cac4683ece0214d0440c, type: 3}
+  TwoImagePrefab: {fileID: 4841250932979668625, guid: 42be42c9fab07bb4590c23532f6c8f21, type: 3}
+  FourImagePrefab: {fileID: 4841250932979668625, guid: 7ce58820f7cfd6e4fbf4926e4ed025a6, type: 3}
+  TwoWordPrefab: {fileID: 4841250932979668625, guid: f24ea16377409af4e87393e12a9656f9, type: 3}
 --- !u!1 &1810945962
 GameObject:
   m_ObjectHideFlags: 0

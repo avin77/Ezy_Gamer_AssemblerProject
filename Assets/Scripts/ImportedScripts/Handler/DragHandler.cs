@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace ezygamer.DropNDrag
+namespace ezygamers.dragndropv1
 {
     //This class handle the drag logic of the GameObject
     //to the strategy defined by IDragHandler
@@ -22,8 +22,7 @@ namespace ezygamer.DropNDrag
                 //create a new instance of UIDragFactory
                 DragStrategyFactory factory= new UIDragFactory();
                 //use the factory to create and assign a UIDragStrategy to dragStrategy
-                dragStrategy = factory.CreateDraggable(this.gameObject);
-               
+                dragStrategy = factory.CreateDraggable(this.gameObject);               
                 
             }
            

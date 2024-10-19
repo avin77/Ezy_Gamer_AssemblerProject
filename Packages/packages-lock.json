@@ -1,11 +1,11 @@
 {
   "dependencies": {
-    "com.ezygamer.cms": {
-      "version": "https://github.com/berasatyam460/Package_LevelConguration.git",
+    "com.ezygamers.cmsv1": {
+      "version": "https://github.com/rohan37kumar/EzyGamers_CMS_v1.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "9aea852576049ff9eeb7265275459c4a1883e878"
+      "hash": "b8b9cc94d4943e804634a50530cfe7cce50ab0df"
     },
     "com.unity.2d.animation": {
       "version": "9.1.1",
