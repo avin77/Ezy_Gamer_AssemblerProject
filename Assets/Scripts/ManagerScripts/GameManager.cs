@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour
         WrongAnswerSelected();
     }
 
+    //currently working on this -rohan37kumar
     private void WrongAnswerSelected()
     {
         //nudge or red
