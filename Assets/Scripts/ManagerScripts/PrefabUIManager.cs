@@ -2,18 +2,17 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using VContainer;
-using ezygamers.CMS;
+using ezygamers.cmsv1;
 using System.Collections.Generic;
+using ezygamers.dragndropv1;
 
 public class PrefabUIManager : MonoBehaviour
 {
-    public Image QuestionImage;
-    public Text QuestionText;
-    public AudioSource QuestionAudioSource;
-    public List<Image> ImgOptions;
-    //public Text hindiText;
-    //public Transform wordOptionsContainer;
-    //public GameObject wordOptionPrefab;  // Prefab for word options
+    public Image LearningImage;
+    public Text SubLevelText;
+    public AudioSource SubLevelAudioSource;
+    public List<OptionContainer> OptionHolders;
+    public List<DropHandler> dropHandlers;
 
     private CMSGameEventManager eventManager;
 
@@ -28,11 +27,15 @@ public class PrefabUIManager : MonoBehaviour
     {
         ResetUI();  // Reset the UI before loading new data
 
-        if (questionData.contentType == ContentType.Learning)
+        if (questionData.optionType == OptionType.Learning)
         {
             LoadLearningContent(questionData);
         }
-        else if (questionData.contentType == ContentType.Question)
+        else if (questionData.optionType == OptionType.TwoImageOpt)
+        {
+            LoadQuestionContent(questionData);
+        }
+        else if (questionData.optionType == OptionType.FourImageOpt)
         {
             LoadQuestionContent(questionData);
         }
@@ -41,36 +44,27 @@ public class PrefabUIManager : MonoBehaviour
 
     private void LoadLearningContent(QuestionBaseSO questionData)
     {
-        QuestionUIHelper.SetImage(QuestionImage, questionData.questionImage.image);
-        QuestionUIHelper.SetText(QuestionText, questionData.hindiText.text, questionData.questionText.text);
-        QuestionUIHelper.SetAudio(QuestionAudioSource, questionData.questionAudio.audioClip);
+        QuestionUIHelper.SetImage(LearningImage, questionData.learningImage.image);
+        QuestionUIHelper.SetText(SubLevelText, questionData.hindiText.text, questionData.questionText.text);
+        QuestionUIHelper.SetAudio(SubLevelAudioSource, questionData.questionAudio.audioClip);
     }
 
     private void LoadQuestionContent(QuestionBaseSO questionData)
     {
-        QuestionUIHelper.SetText(QuestionText, questionData.hindiText.text, questionData.questionText.text);
-
-        if (questionData.imageOptions != null && ImgOptions != null)
-        {
-            int count = Mathf.Min(questionData.imageOptions.Count, ImgOptions.Count);
-            for (int i = 0; i < count; i++)
-            {
-                QuestionUIHelper.SetImage(ImgOptions[i], questionData.imageOptions[i].sprite);
-            }
-        }
-
-        QuestionUIHelper.SetAudio(QuestionAudioSource, questionData.questionAudio.audioClip);
+        QuestionUIHelper.SetText(SubLevelText, questionData.hindiText.text, questionData.questionText.text);
+        QuestionUIHelper.SetOptionsData(questionData.imageOptions, OptionHolders, dropHandlers);
+        QuestionUIHelper.SetAudio(SubLevelAudioSource, questionData.questionAudio.audioClip);
     }
 
     private void ResetUI()
     {
-        QuestionUIHelper.ResetImage(QuestionImage);
-        QuestionUIHelper.ResetText(QuestionText);
-        QuestionUIHelper.ResetAudio(QuestionAudioSource);
+        QuestionUIHelper.ResetImage(LearningImage);
+        QuestionUIHelper.ResetText(SubLevelText);
+        QuestionUIHelper.ResetAudio(SubLevelAudioSource);
 
-        foreach (var imgOption in ImgOptions)
+        foreach (var imgOption in OptionHolders)
         {
-            QuestionUIHelper.ResetImage(imgOption);
+            QuestionUIHelper.ResetImage(imgOption.image);
         }
     }
 }

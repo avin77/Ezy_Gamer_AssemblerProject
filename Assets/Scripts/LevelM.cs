@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;using UnityEngine.UI;
-using ezygamers.CMS;
+using UnityEngine;
+using UnityEngine.UI;
+using ezygamers.cmsv1;
 using TMPro;
 
 public class LevelM : MonoBehaviour
@@ -21,9 +22,9 @@ public class LevelM : MonoBehaviour
         var currentLevel = levelConfigSOs[levelIndex];
         if (currentSublevel < currentLevel.question.Count)
         {
-            if (currentLevel.question[currentSublevel].contentType == ContentType.Learning)
+            if (currentLevel.question[currentSublevel].optionType == OptionType.Learning)
             {
-                questionImage.sprite = currentLevel.question[currentSublevel].questionImage.image;
+                questionImage.sprite = currentLevel.question[currentSublevel].learningImage.image;
             }
         }
         questionText.text = currentLevel.question[currentSublevel].questionText.text;

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-namespace ezygamer.DropNDrag
+namespace ezygamers.dragndropv1
 {
 
     //base class for creating drag strategy instances e.g- UIDragStrategy
@@ -9,7 +9,4 @@ namespace ezygamer.DropNDrag
         public abstract IDragStrategy CreateDraggable(GameObject gameObject);
 
     }
-
-   
-
 }

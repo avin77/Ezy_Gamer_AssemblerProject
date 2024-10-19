@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.ezygamer.cms": "https://github.com/berasatyam460/Package_LevelConguration.git",
+    "com.ezygamers.cmsv1": "https://github.com/rohan37kumar/EzyGamers_CMS_v1.git",
     "com.unity.collab-proxy": "2.5.1",
     "com.unity.feature.2d": "2.0.1",
     "com.unity.ide.rider": "3.0.28",

@@ -1,7 +1,8 @@
 using VContainer.Unity;
 using UnityEngine;
 using VContainer;
-using ezygamers.CMS;
+using ezygamers.cmsv1;
+using System.Collections.Generic;
 
 public class UIManager : MonoBehaviour
 {
@@ -14,8 +15,10 @@ public class UIManager : MonoBehaviour
     }
 
     //There will be different prefabs for each kind of UI -rohan37kumar
-    public GameObject dropsUIPrefab;  // Prefab reference
-    public GameObject questionPrefab;  // Prefab reference
+    public GameObject LearningUIPrefab;  // Prefab reference
+    public GameObject TwoImagePrefab;  // Prefab reference
+    public GameObject FourImagePrefab;
+    public GameObject TwoWordPrefab;
 
     private LevelConfiggSO levelSO;     //private LevelSO to hold data -rohan37kumar
     private GameObject currentPrefab;
@@ -40,7 +43,7 @@ public class UIManager : MonoBehaviour
         CreateUI();
 
         //Trigger the loading of the first question in the level
-        if (levelData.question != null && levelData.question.Count > 0)
+        if (levelData.question != null && levelData.noOfSubLevel > 0)
         {
             CMSGameEventManager eventManager = container.Resolve<CMSGameEventManager>();
             eventManager.LoadNextQuestion(levelData.question[0]);  // Load the first question, can change index to preview particular question 
@@ -86,7 +89,26 @@ public class UIManager : MonoBehaviour
     //simple function to choose which prefab to instantiate (learning or question)  -rohan37kumar
     private void ChoosePrefab(QuestionBaseSO question)
     {
-        currentPrefab = question.contentType == ContentType.Learning ? dropsUIPrefab : questionPrefab;
-        //TODO: Different types of Questions prefab mapping
+        // Dictionary to map content type to the respective prefab
+        var prefabMapping = new Dictionary<OptionType, GameObject>
+        {
+            { OptionType.Learning, LearningUIPrefab },
+            { OptionType.TwoImageOpt, TwoImagePrefab },
+            { OptionType.FourImageOpt, FourImagePrefab },
+            { OptionType.TwoWordOpt, TwoWordPrefab }
+        };
+
+        // Try to get the prefab from the dictionary based on content type
+        if (prefabMapping.TryGetValue(question.optionType, out var prefab))
+        {
+            currentPrefab = prefab;
+        }
+        else
+        {
+            // Fallback to a default prefab if no match found
+            currentPrefab = LearningUIPrefab;
+        }
     }
+
+
 }

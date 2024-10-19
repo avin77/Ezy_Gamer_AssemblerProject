@@ -17,11 +17,11 @@ MonoBehaviour:
     text: Thank you
   hindiText:
     text: "\u0927\u0928\u094D\u092F\u0935\u093E\u0926"
-  questionImage:
+  learningImage:
     image: {fileID: 21300000, guid: 335ce03f42990914c862be2da27e6105, type: 3}
   questionAudio:
     audioClip: {fileID: 8300000, guid: 18aa6f2dcc2158541b31ca24a2424145, type: 3}
   imageOptions: []
-  correctAnswerIndex: 0
-  contentType: 0
+  correctOptionID: 
+  optionType: 0
   difficultyLevel: 0

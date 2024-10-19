@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using Utilitis;//This my own Utilities for the GameObject
-namespace ezygamer.DropNDrag
+namespace ezygamers.dragndropv1
 {
 
     //implementation of DragStrategyFactory for creating UIDragStrategy instance

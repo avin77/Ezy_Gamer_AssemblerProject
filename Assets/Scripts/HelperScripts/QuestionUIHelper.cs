@@ -1,3 +1,6 @@
+using ezygamers.cmsv1;
+using ezygamers.dragndropv1;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +11,19 @@ public class QuestionUIHelper
         if (uiTextComponent != null)
         {
             uiTextComponent.text = string.IsNullOrEmpty(hindiText) ? englishText : $"{hindiText}\n{englishText}";
+        }
+    }
+
+    public static void SetOptionsData(List<ImageOption> imageOptions, List<OptionContainer> OptionHolders, List<DropHandler> dropHandlers)
+    {
+        if (imageOptions != null && OptionHolders != null)
+        {
+            int count = Mathf.Min(imageOptions.Count, OptionHolders.Count);
+            for (int i = 0; i < count; i++)
+            {
+                QuestionUIHelper.SetImage(OptionHolders[i].image, imageOptions[i].sprite);
+                dropHandlers[i].OptionID = imageOptions[i].optionID;
+            }
         }
     }
 

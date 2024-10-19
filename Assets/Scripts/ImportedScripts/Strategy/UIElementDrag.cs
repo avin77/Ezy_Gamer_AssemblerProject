@@ -3,7 +3,7 @@ using UnityEngine;
 using System;
 
 
-namespace ezygamer.DropNDrag
+namespace ezygamers.dragndropv1
 {
     //this class implements the IDragStrategy interface to handle drap operation on UI element
     public class UIElementDrag :IDragStrategy

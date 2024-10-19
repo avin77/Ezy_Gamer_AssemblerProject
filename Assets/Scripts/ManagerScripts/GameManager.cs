@@ -1,6 +1,6 @@
 using UnityEngine;
 using VContainer;
-using ezygamers.CMS;
+using ezygamers.cmsv1;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -46,25 +46,38 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        //code for Progress Bar Setup -rohan37kumar
-        ProgressBar.maxValue = currentLevel.question.Count;
-        ProgressBar.value = 0;
 
         Debug.Log(uiManager);
         Debug.Log("Game Started");
         // Load the first level's UI and questions
+        ProgressBarSet();
         uiManager.LoadLevel(currentLevel);
     }
 
     //Methods for Level Progression -rohan37kumar
     private void OnAnswerSelected(string selectedAnswer)
     {
-        bool isCorrect = CheckAnswer(selectedAnswer);
+        bool isCorrect = AnswerChecker.CheckAnswer(currentLevel.question[CurrentIndex], selectedAnswer);
 
-        if(!isCorrect)
+        if(isCorrect)
         {
+            CorrectAnswerSelected();
             return;
         }
+        WrongAnswerSelected();
+    }
+
+    private void WrongAnswerSelected()
+    {
+        //nudge or red
+        Debug.Log("Wrong Answer");
+        MoveToNextQuestion();
+    }
+
+    private void CorrectAnswerSelected()
+    {
+        //acknowledge the user
+        Debug.Log("Correct Answer");
         MoveToNextQuestion();
     }
 
@@ -72,7 +85,7 @@ public class GameManager : MonoBehaviour
     {
         CurrentIndex++;
         ProgressBar.value++;
-        if (CurrentIndex < currentLevel.question.Count)
+        if (CurrentIndex < currentLevel.noOfSubLevel)
         {
             eventManager.LoadNextQuestion(currentLevel.question[CurrentIndex]);
         }
@@ -81,10 +94,12 @@ public class GameManager : MonoBehaviour
             EndGame();
         }
     }
-    private bool CheckAnswer(string selectedAnswer)
+
+    private void ProgressBarSet()
     {
-        //TODO: checking logic to be implemented...
-        return true;
+        //code for Progress Bar Setup -rohan37kumar
+        ProgressBar.maxValue = currentLevel.question.Count;
+        ProgressBar.value = 0;
     }
 
     public void EndGame()
