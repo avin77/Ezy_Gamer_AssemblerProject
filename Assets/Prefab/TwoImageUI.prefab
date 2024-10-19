@@ -497,7 +497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropOutline: {fileID: 649355712182025386}
   dropColor: {r: 0.670922, g: 0.90943396, b: 0.67867845, a: 0.99607843}
-  outlinecolor: {r: 0.008837297, g: 0.335849, b: 0, a: 1}
+  outlinecolor: {r: 0.67058825, g: 0.909804, b: 0.6784314, a: 1}
   dropAreaImage: {fileID: 3432855001351589480}
 --- !u!114 &4126480780994633366
 MonoBehaviour:
