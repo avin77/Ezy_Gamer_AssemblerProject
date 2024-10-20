@@ -70,17 +70,21 @@ public class GameManager : MonoBehaviour
     //currently working on this -rohan37kumar
     private void WrongAnswerSelected()
     {
-        //nudge or red
+        //nudge or red logic
+        uiManager.LoadWrongUI();
         Debug.Log("Wrong Answer");
-        MoveToNextQuestion();
+        //called LoadNextLevelQuestion without incrementing the index...hence we reload the same level
+        eventManager.LoadNextQuestion(currentLevel.question[CurrentIndex]);
     }
 
     private void CorrectAnswerSelected()
     {
         //acknowledge the user
+        uiManager.LoadCorrectUI();
         Debug.Log("Correct Answer");
         MoveToNextQuestion();
     }
+
 
     private void MoveToNextQuestion()
     {
