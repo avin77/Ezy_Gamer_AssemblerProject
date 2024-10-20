@@ -4,6 +4,7 @@ using VContainer;
 using ezygamers.cmsv1;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -113,11 +114,11 @@ public class UIManager : MonoBehaviour
 
     public void LoadWrongUI()
     {
-
+        dropsUIInstance.transform.GetChild(1).GetComponent<Image>().color = Color.red;
     }
     public void LoadCorrectUI()
     {
-        
+        dropsUIInstance.GetComponent<CorrectDisplayHelper>().DisplayCorrectUI();
     }
     
 

@@ -2,6 +2,8 @@ using UnityEngine;
 using VContainer;
 using ezygamers.cmsv1;
 using UnityEngine.UI;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,7 +14,7 @@ public class GameManager : MonoBehaviour
     private LevelConfiggSO currentLevel;  // ScriptableObject containing level data
     [SerializeField]
     private Slider ProgressBar; //ProgressBar for each level -rohan37kumar
-
+    private bool isProcessing = false;
     public static int CurrentIndex; //value for the Current Index of Question Loaded.
 
     [Inject]
@@ -70,21 +72,41 @@ public class GameManager : MonoBehaviour
     //currently working on this -rohan37kumar
     private void WrongAnswerSelected()
     {
+        if (isProcessing) return;
+        isProcessing = true;
         //nudge or red logic
         uiManager.LoadWrongUI();
         Debug.Log("Wrong Answer");
-        //called LoadNextLevelQuestion without incrementing the index...hence we reload the same level
-        eventManager.LoadNextQuestion(currentLevel.question[CurrentIndex]);
+        StartCoroutine(WaitAndReload());
     }
 
     private void CorrectAnswerSelected()
     {
+        if (isProcessing) return;
+        isProcessing = true;
         //acknowledge the user
         uiManager.LoadCorrectUI();
         Debug.Log("Correct Answer");
-        MoveToNextQuestion();
+        StartCoroutine(WaitAndMoveToNext());
     }
 
+    private IEnumerator WaitAndMoveToNext()
+    {
+        Debug.Log("Waiting before moving to next question...");
+        yield return new WaitForSeconds(3);
+
+        MoveToNextQuestion();
+        isProcessing = false;
+    }
+    private IEnumerator WaitAndReload()
+    {
+        Debug.Log("Waiting to reload the sublevel");
+        yield return new WaitForSeconds(0.5f);
+
+        //called LoadNextLevelQuestion without incrementing the index...hence we reload the same level
+        eventManager.LoadNextQuestion(currentLevel.question[CurrentIndex]);
+        isProcessing = false;
+    }
 
     private void MoveToNextQuestion()
     {
@@ -110,7 +132,7 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         Debug.Log("Game Ended");
-       // eventManager.EndGame();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 

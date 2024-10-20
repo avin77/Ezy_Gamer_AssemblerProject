@@ -22,14 +22,15 @@ public class CorrectDisplayHelper : MonoBehaviour
         Debug.Log("displaying correct UI");
         previousUI.SetActive(false);
         correctAnswerGroup.SetActive(true);
-        StartCoroutine(WaitAndContinue());
-        correctAnswerGroup.SetActive(false);
+        //StartCoroutine(WaitAndContinue());
+        //correctAnswerGroup.SetActive(false);
     }
-    IEnumerator WaitAndContinue()
-    {
+    //IEnumerator WaitAndContinue()
+    //{
         // Wait for 3 seconds
-        yield return new WaitForSeconds(3);
-    }
+        //Debug.Log("waiting...");
+        //yield return new WaitForSeconds(3);
+    //}
 
 
 }

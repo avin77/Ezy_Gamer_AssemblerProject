@@ -10,26 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dcdc2b11efba46478f2700781d8b2d6, type: 3}
-  m_Name: QuestionThankyou
+  m_Name: QuestionSorry
   m_EditorClassIdentifier: 
-  questionNo: 3
+  questionNo: 5
   questionText:
-    text: Thank you
+    text: Sorry
   hindiText:
-    text: "\u0927\u0928\u094D\u092F\u0935\u093E\u0926"
+    text: "\u092E\u093E\u092B\u093C \u0915\u0940\u091C\u093F\u092F\u0947"
   learningImage:
     image: {fileID: 0}
   questionAudio:
-    audioClip: {fileID: 8300000, guid: 18aa6f2dcc2158541b31ca24a2424145, type: 3}
+    audioClip: {fileID: 8300000, guid: 821c6a6d144c6414faaacfd7dc26e106, type: 3}
   imageOptions:
   - optionID: 0
-    sprite: {fileID: 21300000, guid: 321ad5f0f97ef3645968344d9d599e40, type: 3}
+    sprite: {fileID: 21300000, guid: 4d21fce9843ba584e944d0f131c434ac, type: 3}
   - optionID: 1
-    sprite: {fileID: 21300000, guid: c28d6048fc58e4949960885654171d9a, type: 3}
-  - optionID: 2
-    sprite: {fileID: 21300000, guid: 0f04552a347bc674cb5863ceb403df8b, type: 3}
-  - optionID: 3
     sprite: {fileID: 21300000, guid: 335ce03f42990914c862be2da27e6105, type: 3}
-  correctOptionID: 3
-  optionType: 2
+  correctOptionID: 0
+  optionType: 1
   difficultyLevel: 0
