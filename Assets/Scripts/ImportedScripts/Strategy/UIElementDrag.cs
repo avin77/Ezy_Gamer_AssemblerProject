@@ -30,7 +30,7 @@ namespace ezygamers.dragndropv1
             //disable the raycast of dragged item
             canvasGroup.blocksRaycasts = false;
             //scale down the draggable element
-            rectTransform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+            rectTransform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
             
         }
     

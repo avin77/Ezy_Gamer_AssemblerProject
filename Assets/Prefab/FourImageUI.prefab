@@ -169,7 +169,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u0938\u0939\u0940 \u091A\u093F\u0924\u094D\u0930 \u092A\u0939\u091A\u093E\u0928\u0947\u0902"
+  m_Text: "\u0936\u092C\u094D\u0926 \u0915\u094B \u0938\u0939\u0940 \u091B\u0935\u093F
+    \u092A\u0930 \u091B\u094B\u0921\u093C\u0947\u0902"
 --- !u!114 &7441810756431752731
 MonoBehaviour:
   m_ObjectHideFlags: 0

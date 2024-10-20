@@ -117,45 +117,8 @@ public class UIManager : MonoBehaviour
     }
     public void LoadCorrectUI()
     {
-        if (dropsUIInstance == null)
-        {
-            Debug.LogError("No active UI instance found!");
-            return;
-        }
-
-        // Get the panels
-        Transform firstPanel = dropsUIInstance.transform.GetChild(0);
-        Transform correctPanel = dropsUIInstance.transform.GetChild(1);
-
-        if (firstPanel == null || correctPanel == null)
-        {
-            Debug.LogError("Required panels not found in the prefab!");
-            return;
-        }
-
-        // Hide the first panel
-        firstPanel.gameObject.SetActive(false);
-
-        // Show the correct panel
-        correctPanel.gameObject.SetActive(true);
-
-        // Get and activate the CorrectDisplayHelper
-        CorrectDisplayHelper correctDisplayHelper = correctPanel.GetComponent<CorrectDisplayHelper>();
-        if (correctDisplayHelper != null)
-        {
-            correctDisplayHelper.DisplayCorrectUI();
-            correctPanel.gameObject.SetActive(false);
-        }
-        else
-        {
-            Debug.LogError("CorrectDisplayHelper component not found on CorrectUIPanel!");
-        }
+        
     }
-    IEnumerator WaitAndContinue()
-    {
-        // Wait for 3 seconds
-        yield return new WaitForSeconds(3);
-    }
-
+    
 
 }

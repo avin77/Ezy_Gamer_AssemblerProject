@@ -16,6 +16,8 @@ namespace ezygamers.dragndropv1
         [SerializeField] Image dropAreaImage;
         Color originalColor;
         Color originalOutlineColor;
+
+        private bool isActive = false; //to check if specific drop area is active
         private void Start()
         {
             originalColor = dropAreaImage.color;
@@ -48,16 +50,24 @@ namespace ezygamers.dragndropv1
 
         private void RemoveHighlightDropArea()
         {
-            dropAreaImage.color = originalColor;
-            dropOutline.color = originalOutlineColor;
-            Debug.Log("NotHighlight");
+            if (isActive)
+            {
+                dropAreaImage.color = originalColor;
+                dropOutline.color = originalOutlineColor;
+                isActive = false;
+                Debug.Log($"Remove Highlight {gameObject.name}");
+            }
         }
 
         private void HighlightDropArea()
         {
-            dropAreaImage.color = dropColor;
-            dropOutline.color = outlinecolor;
-            Debug.Log("areaHighlight");
+            if (!isActive)
+            {
+                dropAreaImage.color = dropColor;
+                dropOutline.color = outlinecolor;
+                isActive = true;
+                Debug.Log($"Highlight {gameObject.name}");
+            }
         }
 
        
