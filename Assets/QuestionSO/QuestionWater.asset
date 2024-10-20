@@ -10,26 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dcdc2b11efba46478f2700781d8b2d6, type: 3}
-  m_Name: QuestionThankyou
+  m_Name: QuestionWater
   m_EditorClassIdentifier: 
-  questionNo: 3
+  questionNo: 7
   questionText:
-    text: Thank you
+    text: Water
   hindiText:
-    text: "\u0927\u0928\u094D\u092F\u0935\u093E\u0926"
+    text: "\u092A\u093E\u0928\u0940"
   learningImage:
     image: {fileID: 0}
   questionAudio:
-    audioClip: {fileID: 8300000, guid: 18aa6f2dcc2158541b31ca24a2424145, type: 3}
+    audioClip: {fileID: 8300000, guid: 124496f23370de04eb9d0e4e7a74dd9f, type: 3}
   imageOptions:
   - optionID: 0
-    sprite: {fileID: 21300000, guid: 321ad5f0f97ef3645968344d9d599e40, type: 3}
-  - optionID: 1
     sprite: {fileID: 21300000, guid: c28d6048fc58e4949960885654171d9a, type: 3}
-  - optionID: 2
+  - optionID: 1
     sprite: {fileID: 21300000, guid: 0f04552a347bc674cb5863ceb403df8b, type: 3}
+  - optionID: 2
+    sprite: {fileID: 21300000, guid: 321ad5f0f97ef3645968344d9d599e40, type: 3}
   - optionID: 3
-    sprite: {fileID: 21300000, guid: 335ce03f42990914c862be2da27e6105, type: 3}
+    sprite: {fileID: 21300000, guid: 5c1de3c2edd6a654db083af22787607e, type: 3}
   correctOptionID: 3
   optionType: 2
   difficultyLevel: 0

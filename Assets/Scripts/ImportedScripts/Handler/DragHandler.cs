@@ -26,7 +26,7 @@ namespace ezygamers.dragndropv1
                 
             }
            
-                //TODO:create the strategy for Non UI Gameobject in else block
+            //TODO:create the strategy for Non UI Gameobject in else block
             
         }
 

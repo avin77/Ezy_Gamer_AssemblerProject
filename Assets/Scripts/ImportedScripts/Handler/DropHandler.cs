@@ -11,6 +11,7 @@ namespace ezygamers.dragndropv1
 
         private CMSGameEventManager eventManager;
 
+
         [Inject]
         public void Construct(CMSGameEventManager eventManager)
         {
@@ -31,10 +32,10 @@ namespace ezygamers.dragndropv1
                 //Get the transform of the draggableHandler GameObject
                 var draggedGamObject = draggableHandler.gameObject.transform;
                 // Set the parent of the dragged object to this GameObject
-                draggedGamObject.SetParent(this.transform);
+                draggedGamObject.gameObject.SetActive(false);
                 // Reset the local position of the dragged object to zero
                 draggedGamObject.transform.localPosition = Vector3.zero;
-                Debug.Log("ItemDropped");
+                Debug.Log($"Item Dropped on: {gameObject.name}");
 
                 eventManager.OptionSelected(OptionID); //triggering the event -rohan37kumar
                 //Debug.Log(OptionID);
