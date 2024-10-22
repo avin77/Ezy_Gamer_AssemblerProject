@@ -23,9 +23,9 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 821c6a6d144c6414faaacfd7dc26e106, type: 3}
   imageOptions:
   - optionID: 0
-    sprite: {fileID: 21300000, guid: 4d21fce9843ba584e944d0f131c434ac, type: 3}
-  - optionID: 1
     sprite: {fileID: 21300000, guid: 335ce03f42990914c862be2da27e6105, type: 3}
-  correctOptionID: 0
+  - optionID: 1
+    sprite: {fileID: 21300000, guid: 4d21fce9843ba584e944d0f131c434ac, type: 3}
+  correctOptionID: 1
   optionType: 1
   difficultyLevel: 0

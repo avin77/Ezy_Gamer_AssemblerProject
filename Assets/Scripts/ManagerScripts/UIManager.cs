@@ -5,6 +5,7 @@ using ezygamers.cmsv1;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.UI;
+using System.Runtime.CompilerServices;
 
 public class UIManager : MonoBehaviour
 {
@@ -112,14 +113,20 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    //currently working on this -rohan37kumar
     public void LoadWrongUI()
     {
-        dropsUIInstance.transform.GetChild(1).GetComponent<Image>().color = Color.red;
+        
     }
     public void LoadCorrectUI()
     {
         dropsUIInstance.GetComponent<CorrectDisplayHelper>().DisplayCorrectUI();
     }
-    
+
+    void StartVibration(GameObject gameObject)
+    {
+        // Move the object left and right for the vibration effect
+        
+    }
 
 }

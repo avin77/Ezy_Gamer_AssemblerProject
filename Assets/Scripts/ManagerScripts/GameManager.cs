@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     private CMSGameEventManager eventManager;  // Reference to CMSGameEventManager
     private  UIManager uiManager;               // Reference to UIManager
+    private AudioManager audioManager;          //Reference to AudioManager
 
     [SerializeField]
     private LevelConfiggSO currentLevel;  // ScriptableObject containing level data
@@ -16,12 +17,14 @@ public class GameManager : MonoBehaviour
     private Slider ProgressBar; //ProgressBar for each level -rohan37kumar
     private bool isProcessing = false;
     public static int CurrentIndex; //value for the Current Index of Question Loaded.
+    
 
     [Inject]
-    public void Construct(CMSGameEventManager eventManager, UIManager uiManager)
+    public void Construct(CMSGameEventManager eventManager, UIManager uiManager, AudioManager audioManager)
     {
         this.eventManager = eventManager;
         this.uiManager = uiManager;
+        this.audioManager = audioManager;
     }
 
     private void OnEnable()
@@ -69,12 +72,13 @@ public class GameManager : MonoBehaviour
         WrongAnswerSelected();
     }
 
-    //currently working on this -rohan37kumar
+    
     private void WrongAnswerSelected()
     {
         if (isProcessing) return;
         isProcessing = true;
         //nudge or red logic
+        audioManager.PlayWrongAudio();
         uiManager.LoadWrongUI();
         Debug.Log("Wrong Answer");
         StartCoroutine(WaitAndReload());
@@ -85,6 +89,7 @@ public class GameManager : MonoBehaviour
         if (isProcessing) return;
         isProcessing = true;
         //acknowledge the user
+        audioManager.PlayCorrectAudio();
         uiManager.LoadCorrectUI();
         Debug.Log("Correct Answer");
         StartCoroutine(WaitAndMoveToNext());
@@ -101,7 +106,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator WaitAndReload()
     {
         Debug.Log("Waiting to reload the sublevel");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.85f);
 
         //called LoadNextLevelQuestion without incrementing the index...hence we reload the same level
         eventManager.LoadNextQuestion(currentLevel.question[CurrentIndex]);
