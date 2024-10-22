@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class AudioBtn : MonoBehaviour
 {
-    private AudioSource audioSource;
+    private static AudioSource audioSource;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.playOnAwake = false;  // Don't play on start
+        audioSource.loop = false;
+        audioSource.volume = 1.0f;
     }
-    public void PlayAudioOnClick()
+    public static void PlayAudioOnClick()
     {
         if (audioSource.clip!=null)
         {

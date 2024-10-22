@@ -12,15 +12,25 @@ namespace ezygamers.dragndropv1
         private CanvasGroup canvasGroup;
         //private bool isInDropZone = false;
         //store the intial position
-        private Vector3 origanalPosition;
+        private Vector3 originalPosition;
         private GameObject currentDropArea = null;
+        private Canvas parentCanvas;
+        private Camera mainCamera;
 
         //intialization through constructor with required components
         public UIElementDrag(RectTransform rectTransform, CanvasGroup canvasGroup)
         {
             this.rectTransform = (rectTransform);
             this.canvasGroup = canvasGroup;
-            origanalPosition = rectTransform.localPosition;
+            originalPosition = rectTransform.localPosition;
+
+            // Get reference to the parent canvas and camera, to make the dragged object visible
+            parentCanvas = rectTransform.GetComponentInParent<Canvas>();
+            mainCamera = parentCanvas.worldCamera;
+            if (mainCamera == null)
+            {
+                mainCamera = Camera.main;
+            }
         }
 
         //when user start dragging the UI element
@@ -31,7 +41,7 @@ namespace ezygamers.dragndropv1
             //disable the raycast of dragged item
             canvasGroup.blocksRaycasts = false;
             //scale down the draggable element
-            rectTransform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+            rectTransform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
         }
 
@@ -39,7 +49,10 @@ namespace ezygamers.dragndropv1
         public void OnDrag(PointerEventData eventData)
         {
             //update the position of the UI
-            rectTransform.position = Input.mousePosition;
+            Vector3 mousePos = Input.mousePosition;
+            mousePos.z = parentCanvas.planeDistance; // Use canvas's plane distance
+            Vector3 worldPos = mainCamera.ScreenToWorldPoint(mousePos);
+            rectTransform.position = worldPos;
 
             GameObject newDropArea = null;
             if (eventData.pointerEnter != null)
@@ -97,7 +110,10 @@ namespace ezygamers.dragndropv1
 
             if (!validDrop)
             {
-                rectTransform.anchoredPosition = origanalPosition;
+                // Convert original position back to world space
+                Vector3 localPos = originalPosition;
+                localPos.z = parentCanvas.planeDistance;
+                rectTransform.localPosition = localPos;
             }
 
             // Remove all highlights

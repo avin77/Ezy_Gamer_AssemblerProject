@@ -8,7 +8,7 @@ namespace ezygamers.dragndropv1
     public class DropHandler : MonoBehaviour, IDropHandler
     {
         public string OptionID; //holds the value of option ID from the OptionID of Question Data -rohan37kumar
-
+        [SerializeField] private GameObject center;
         private CMSGameEventManager eventManager;
 
 
@@ -32,7 +32,7 @@ namespace ezygamers.dragndropv1
                 //Get the transform of the draggableHandler GameObject
                 var draggedGamObject = draggableHandler.gameObject.transform;
                 // Set the parent of the dragged object to this GameObject
-                draggedGamObject.gameObject.SetActive(false);
+                draggedGamObject.LeanMoveLocal(center.transform.position, 1);
                 // Reset the local position of the dragged object to zero
                 draggedGamObject.transform.localPosition = Vector3.zero;
                 Debug.Log($"Item Dropped on: {gameObject.name}");

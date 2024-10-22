@@ -40,7 +40,7 @@ public class QuestionUIHelper
         if (audioSource != null && audioClip != null)
         {
             audioSource.clip = audioClip;
-            audioSource.Play();
+            //audioSource.Play();
         }
     }
 

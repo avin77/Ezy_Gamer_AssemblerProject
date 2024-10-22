@@ -14,6 +14,9 @@ namespace ezygamers.dragndropv1
         //if the gamobject is UI element or Not
         [SerializeField] bool isUI;
 
+        public Vector3 targetScale = new Vector3(1.02f, 1.02f, 1.02f);
+        public float pulseSpeed = 0.2f;
+
         private void Start()
         {
 
@@ -25,9 +28,18 @@ namespace ezygamers.dragndropv1
                 dragStrategy = factory.CreateDraggable(this.gameObject);               
                 
             }
-           
+
             //TODO:create the strategy for Non UI Gameobject in else block
-            
+
+            //StartPulse();
+        }
+
+        void StartPulse()
+        {
+            // Perform a LeanTween scale up animation
+            LeanTween.scale(gameObject, targetScale, pulseSpeed)
+                .setEase(LeanTweenType.easeInOutSine)
+                .setLoopPingPong();
         }
 
         //when usen begins dragging a gameobject

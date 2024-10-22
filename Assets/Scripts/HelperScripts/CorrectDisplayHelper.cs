@@ -9,6 +9,8 @@ public class CorrectDisplayHelper : MonoBehaviour
     [SerializeField] private Image correctImage;
     [SerializeField] private Text subLevelText;
     [SerializeField] private GameObject correctAnswerGroup;
+    [SerializeField] private GameObject acknowledgePanel;
+    [SerializeField] private GameObject confettiEffect;
 
     [SerializeField] private Image imageHolder;
     [SerializeField] private Text textHolder;
@@ -16,21 +18,20 @@ public class CorrectDisplayHelper : MonoBehaviour
 
     public void DisplayCorrectUI()
     {
-        imageHolder = correctImage;
+        imageHolder.sprite = correctImage.sprite;
         textHolder.text = subLevelText.text;
         
         Debug.Log("displaying correct UI");
         previousUI.SetActive(false);
         correctAnswerGroup.SetActive(true);
-        //StartCoroutine(WaitAndContinue());
-        //correctAnswerGroup.SetActive(false);
+        acknowledgePanel.LeanMoveLocalY(-1580, 0.5f).setEaseOutExpo().delay = 0.1f;
+        if(confettiEffect != null)
+        {
+            confettiEffect.SetActive(true);
+        }
+        
     }
-    //IEnumerator WaitAndContinue()
-    //{
-        // Wait for 3 seconds
-        //Debug.Log("waiting...");
-        //yield return new WaitForSeconds(3);
-    //}
+    
 
 
 }
