@@ -21,6 +21,7 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.clip = correctClip;
         audioSource.Play();
+        Invoke("StopAudio", 2.5f);
     }
     public void PlayWrongAudio()
     {
@@ -28,4 +29,10 @@ public class AudioManager : MonoBehaviour
         audioSource.Play();
     }
 
+
+    void StopAudio()
+    {
+        // Stop the audio playback
+        audioSource.Stop();
+    }
 }

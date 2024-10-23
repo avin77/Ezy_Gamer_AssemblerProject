@@ -113,9 +113,9 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    //currently working on this -rohan37kumar
     public void LoadWrongUI()
     {
+        //currently working on this -rohan37kumar
         
     }
     public void LoadCorrectUI()
