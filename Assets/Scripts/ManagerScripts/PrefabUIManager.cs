@@ -11,9 +11,10 @@ public class PrefabUIManager : MonoBehaviour
     public Image LearningImage;
     public Text SubLevelText;
     public AudioSource SubLevelAudioSource;
+    public GameObject DraggableObject;
     public List<OptionContainer> OptionHolders;
     public List<DropHandler> dropHandlers;
-
+    [SerializeField] private GameObject center;
     private CMSGameEventManager eventManager;
 
     [Inject]
@@ -58,6 +59,7 @@ public class PrefabUIManager : MonoBehaviour
 
     private void ResetUI()
     {
+        DraggableObject.transform.position = center.transform.position;
         QuestionUIHelper.ResetImage(LearningImage);
         QuestionUIHelper.ResetText(SubLevelText);
         QuestionUIHelper.ResetAudio(SubLevelAudioSource);
