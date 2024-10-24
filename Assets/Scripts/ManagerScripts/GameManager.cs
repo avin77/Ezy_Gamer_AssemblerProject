@@ -130,8 +130,8 @@ public class GameManager : MonoBehaviour
     private void ProgressBarSet()
     {
         //code for Progress Bar Setup -rohan37kumar
-        ProgressBar.maxValue = currentLevel.question.Count;
-        ProgressBar.value = 0;
+        ProgressBar.maxValue = currentLevel.question.Count + 1;
+        ProgressBar.value = 1;
     }
 
     public void EndGame()

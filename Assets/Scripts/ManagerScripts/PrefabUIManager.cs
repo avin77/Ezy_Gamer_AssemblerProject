@@ -8,7 +8,7 @@ using ezygamers.dragndropv1;
 
 public class PrefabUIManager : MonoBehaviour
 {
-    public Image LearningImage;
+    public OptionContainer LearningImageData;
     public Text SubLevelText;
     public AudioSource SubLevelAudioSource;
     public GameObject DraggableObject;
@@ -45,14 +45,15 @@ public class PrefabUIManager : MonoBehaviour
 
     private void LoadLearningContent(QuestionBaseSO questionData)
     {
-        QuestionUIHelper.SetImage(LearningImage, questionData.learningImage.image);
-        QuestionUIHelper.SetText(SubLevelText, questionData.hindiText.text, questionData.questionText.text);
+        QuestionUIHelper.SetImage(LearningImageData.image, questionData.learningImage.image);
+        QuestionUIHelper.SetText(LearningImageData.optionText, questionData.questionText.text);
+        QuestionUIHelper.SetText(SubLevelText, questionData.hindiText.text);
         QuestionUIHelper.SetAudio(SubLevelAudioSource, questionData.questionAudio.audioClip);
     }
 
     private void LoadQuestionContent(QuestionBaseSO questionData)
     {
-        QuestionUIHelper.SetText(SubLevelText, questionData.hindiText.text, questionData.questionText.text);
+        QuestionUIHelper.SetText(SubLevelText, questionData.hindiText.text);
         QuestionUIHelper.SetOptionsData(questionData.imageOptions, OptionHolders, dropHandlers);
         QuestionUIHelper.SetAudio(SubLevelAudioSource, questionData.questionAudio.audioClip);
     }
@@ -60,7 +61,8 @@ public class PrefabUIManager : MonoBehaviour
     private void ResetUI()
     {
         DraggableObject.transform.position = center.transform.position;
-        QuestionUIHelper.ResetImage(LearningImage);
+        QuestionUIHelper.ResetImage(LearningImageData.image);
+        QuestionUIHelper.ResetText(LearningImageData.optionText);
         QuestionUIHelper.ResetText(SubLevelText);
         QuestionUIHelper.ResetAudio(SubLevelAudioSource);
 

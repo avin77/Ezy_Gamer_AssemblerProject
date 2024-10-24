@@ -16,6 +16,7 @@ namespace ezygamers.dragndropv1
         //this holds the initial position of the draggable object
         [SerializeField] private GameObject originalPos;
 
+        [SerializeField] private bool toPop;
         public Vector3 targetScale = new Vector3(1.02f, 1.02f, 1.02f);
         public float pulseSpeed = 0.2f;
 
@@ -32,15 +33,10 @@ namespace ezygamers.dragndropv1
 
             //TODO:create the strategy for Non UI Gameobject in else block
 
-            AnimationHelper.StartPulse(gameObject, targetScale, pulseSpeed);
-        }
-
-        void StartPulse()
-        {
-            // Perform a LeanTween scale up animation
-            LeanTween.scale(gameObject, targetScale, pulseSpeed)
-                .setEase(LeanTweenType.easeInOutSine)
-                .setLoopPingPong();
+            if (toPop)
+            {
+                AnimationHelper.StartPulse(gameObject, targetScale, pulseSpeed);
+            }
         }
 
         //when usen begins dragging a gameobject
@@ -60,7 +56,10 @@ namespace ezygamers.dragndropv1
         public void OnEndDrag(PointerEventData eventData)
         {
             dragStrategy?.OnEndDrag(eventData);
-            AnimationHelper.StartPulse(gameObject, targetScale, pulseSpeed);
+            if (toPop)
+            {
+                AnimationHelper.StartPulse(gameObject, targetScale, pulseSpeed);
+            }
 
             RectTransform draggedRect = this.GetComponent<RectTransform>();
             RectTransform originalRect = originalPos.GetComponent<RectTransform>();
@@ -69,9 +68,9 @@ namespace ezygamers.dragndropv1
 
             // Use LeanTween to move to the anchored position
             LeanTween.value(gameObject, currentPos, targetPos, 0.5f)
-                .setOnUpdate((Vector2 pos) => {
-                    draggedRect.anchoredPosition = pos;
-                });
+                     .setOnUpdate((Vector2 pos) => {
+                      draggedRect.anchoredPosition = pos;
+                     });
         }
     }
 

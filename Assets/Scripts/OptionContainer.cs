@@ -5,5 +5,5 @@ using UnityEngine.UI;
 public class OptionContainer
 {
     public Image image;
-    public string optionText;
+    public Text optionText;
 }
