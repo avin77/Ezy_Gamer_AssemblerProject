@@ -16,7 +16,7 @@ MonoBehaviour:
   questionText:
     text: Sorry
   hindiText:
-    text: "\u092E\u093E\u092B\u093C \u0915\u0940\u091C\u093F\u092F\u0947"
+    text: "\u092E\u093E\u095E\u0940"
   learningImage:
     image: {fileID: 0}
   questionAudio:
@@ -24,8 +24,10 @@ MonoBehaviour:
   imageOptions:
   - optionID: 0
     sprite: {fileID: 21300000, guid: 335ce03f42990914c862be2da27e6105, type: 3}
+    text: Thank You
   - optionID: 1
-    sprite: {fileID: 21300000, guid: 4d21fce9843ba584e944d0f131c434ac, type: 3}
+    sprite: {fileID: 21300000, guid: 688fe2f10b97d404288198997e45bd7f, type: 3}
+    text: Sorry
   correctOptionID: 1
   optionType: 1
   difficultyLevel: 0

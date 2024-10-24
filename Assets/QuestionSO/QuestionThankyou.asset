@@ -24,12 +24,16 @@ MonoBehaviour:
   imageOptions:
   - optionID: 0
     sprite: {fileID: 21300000, guid: 321ad5f0f97ef3645968344d9d599e40, type: 3}
+    text: Eat
   - optionID: 1
     sprite: {fileID: 21300000, guid: c28d6048fc58e4949960885654171d9a, type: 3}
+    text: Hello
   - optionID: 2
     sprite: {fileID: 21300000, guid: 0f04552a347bc674cb5863ceb403df8b, type: 3}
+    text: Run
   - optionID: 3
     sprite: {fileID: 21300000, guid: 335ce03f42990914c862be2da27e6105, type: 3}
+    text: Thank You
   correctOptionID: 3
   optionType: 2
   difficultyLevel: 0

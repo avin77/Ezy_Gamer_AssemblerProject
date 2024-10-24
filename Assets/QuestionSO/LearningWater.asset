@@ -18,7 +18,7 @@ MonoBehaviour:
   hindiText:
     text: "\u092A\u093E\u0928\u0940"
   learningImage:
-    image: {fileID: 21300000, guid: 5c1de3c2edd6a654db083af22787607e, type: 3}
+    image: {fileID: 21300000, guid: 80d9e1a3c5e9b804eb9e31f6e79ddc4c, type: 3}
   questionAudio:
     audioClip: {fileID: 8300000, guid: 124496f23370de04eb9d0e4e7a74dd9f, type: 3}
   imageOptions: []

@@ -9,7 +9,8 @@ namespace ezygamers.dragndropv1
     {
         public string OptionID; //holds the value of option ID from the OptionID of Question Data -rohan37kumar
         private CMSGameEventManager eventManager;
-
+        //this holds the initial position of the draggable object
+        [SerializeField] private GameObject originalPos;
 
         [Inject]
         public void Construct(CMSGameEventManager eventManager)
@@ -30,9 +31,12 @@ namespace ezygamers.dragndropv1
 
                 //Get the transform of the draggableHandler GameObject
                 var draggedGameObject = draggableHandler.gameObject.transform;
-                // Set the parent of the dragged object to this GameObject
-                // Reset the local position of the dragged object to zero
-                //draggedGameObject.transform.localPosition = Vector3.zero;
+
+                //Snapping back the object to original position
+                //RectTransform originalRect = originalPos.GetComponent<RectTransform>();
+                //Vector2 targetPos = originalRect.anchoredPosition;
+                draggedGameObject.transform.position = originalPos.transform.position;
+
                 Debug.Log($"Item Dropped on: {gameObject.name}");
 
                 //nudging this object to show dropped on this

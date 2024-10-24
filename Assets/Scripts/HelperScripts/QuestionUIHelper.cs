@@ -6,11 +6,12 @@ using UnityEngine.UI;
 
 public class QuestionUIHelper
 {
-    public static void SetText(Text uiTextComponent, string hindiText, string englishText)
+    public static void SetText(Text uiTextComponent, string text)
     {
         if (uiTextComponent != null)
         {
-            uiTextComponent.text = string.IsNullOrEmpty(hindiText) ? englishText : $"{hindiText}\n{englishText}";
+            //uiTextComponent.text = string.IsNullOrEmpty(hindiText) ? englishText : $"{hindiText}\n{englishText}";
+            uiTextComponent.text = text;
         }
     }
 
@@ -22,11 +23,12 @@ public class QuestionUIHelper
             for (int i = 0; i < count; i++)
             {
                 QuestionUIHelper.SetImage(OptionHolders[i].image, imageOptions[i].sprite);
+                QuestionUIHelper.SetText(OptionHolders[i].optionText, imageOptions[i].text);
                 dropHandlers[i].OptionID = imageOptions[i].optionID;
             }
         }
     }
-
+    
     public static void SetImage(Image uiImageComponent, Sprite imageSprite)
     {
         if (uiImageComponent != null && imageSprite != null)
